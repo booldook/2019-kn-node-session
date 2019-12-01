@@ -1,0 +1,18 @@
+extends ./layout/default.pug
+
+block title
+	.jumbotron
+		h1 회원로그인
+block content
+	.h-75.my-3.p-3.border.rounded.d-flex.justify-content-center.align-items-center(style="margin: auto;")
+		form(action="/users/login" method="post" style="width: 300px;")
+			h2 회원로그인
+			.py-2
+				span - 아이디 
+				input.form-control(type="text")
+			.py-2
+				span - 패스워드
+				input.form-control(type="password")
+			.py-2.text-center
+				button.btn.btn-primary.mr-1 로그인
+				button.btn.btn-success 회원가입
