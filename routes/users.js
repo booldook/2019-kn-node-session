@@ -10,8 +10,9 @@ router.get('/', (req, res, next) => {
 });
 
 router.get('/logout', (req, res, next) => {
-  req.session.user = null;
-  res.redirect("/users");
+  req.session.destroy((err) => {
+    res.redirect("/users");
+  });
 });
 
 router.post('/login', async (req, res, next) => {
